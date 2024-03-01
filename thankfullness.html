@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thankfulness</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Custom styles */
+        .custom-card {
+            margin-top: 0px;
+            /* Adjust the margin-top as needed */
+            padding: 30px;
+            /* Add padding for spacing */
+        }
+    </style>
+</head>
+
+<body class="gradient-background">
+    <div class="container">
+        <h1 id="title" class="text-center mt-5 mb-3">Thankfulness</h1>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 custom-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title text-center">Today's Reading</h2>
+                        <div id="quote" class="text-center"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center align-items-center" style="height: 40vh;">
+            <div class="col-md-6">
+                <img id="image" src="./images/thankfullness.jpg" alt="" class="img-fluid" style="border-radius: 5%;">
+                <div class="d-grid gap-2 col-6 mx-auto mt-3">
+                    <audio id="audio1" src="./images/sounds/impact-6291.mp3"></audio>
+                    <a class="btn btn-outline-primary mt-4 mb-5" onclick="playSoundAndRedirect(event)"
+                        href="./index.html">Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Play audio when the page loads
+        window.onload = function() {                                        //audio when page loads
+                var audio = new Audio("./images/sounds/angelical-pad-143276.mp3");
+                audio.play();
+            };
+
+        // Function to display a random quote for thankfulness
+        function displayRandomThankfulnessQuote() {
+            const randomIndex = Math.floor(Math.random() * thankfulness.length);
+            const quoteElement = document.getElementById("quote");
+            quoteElement.textContent = thankfulness[randomIndex];
+        }
+
+        // Call the function to display a random quote for thankfulness
+        displayRandomThankfulnessQuote();
+
+        // Function to play sound and redirect
+        function playSoundAndRedirect(event) {
+            event.preventDefault(); // Prevent the default behavior of the anchor tag
+            var audio = document.getElementById("audio1");
+            audio.play();
+            setTimeout(function () {
+                audio.pause(); // Pause the audio after 2 seconds
+                audio.currentTime = 0; // Reset the audio to the beginning
+                window.location.href = "index.html"; // Redirect to the new page
+            }, 2000); // 2 seconds
+        }
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

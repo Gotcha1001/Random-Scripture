@@ -1,0 +1,58 @@
+.large-font {
+    font-size: 40px;
+    font-weight: bold;
+    font-family:'Courier New', Courier, monospace;
+    color: black;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.gradient-background {
+    background: linear-gradient(300deg, #3b0677, #02535e, #030364);
+    background-size: 180% 180%;
+    animation: gradient-animation 5s ease infinite;
+
+   /*background-size: cover; */
+    background-repeat: no-repeat; 
+    background-attachment: fixed; /* Keep background fixed when scrolling */
+    
+  }
+  
+
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .carousel-item img {
+    height: 600px; /* Adjust the height as needed */
+    object-fit: cover;
+}
+
+.carousel-inner {
+  border-radius: 20px; /* Adjust the value to change the roundness */
+  overflow: hidden; /* Ensure the images don't overflow */
+}
+
+
+
+/* Custom styles */
+.custom-card {
+  margin-top: 0px;
+  /* Adjust the margin-top as needed */
+  padding: 30px;
+  /* Add padding for spacing */
+}
+
+/* Zoom in effect on image hover */
+.img-fluid:hover {
+  transform: scale(1.1); /* Increase the scale value for more zoom */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
